@@ -1,4 +1,4 @@
 # OSXIPDisplayer
 
 Displays your public IP address in your status bar by checking ifconfig.me/ip. 
-Updates every 60 seconds.
+IP refreshed by hitting the refresh menu item. (TODO: implement event based updates).

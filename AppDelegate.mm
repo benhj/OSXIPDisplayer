@@ -33,12 +33,6 @@
     _statusItem.title = strippedIP;
 }
 
-- (void)ipUpdater {
-    while(1) {
-        [_connectionDelegate sendGetIPRequest];
-        sleep(60);
-    }
-}
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
     // retrieve public ip
@@ -60,6 +54,12 @@
     // Menu stuff
     NSMenu *menu = [[NSMenu alloc] init];
     
+    // For refreshing the IP
+    [menu addItemWithTitle:@"Refresh"
+                    action:@selector(processRefresh:)
+             keyEquivalent:@""];
+    [menu addItem:[NSMenuItem separatorItem]]; // A thin grey line
+    
     // Add a simple 'about' item
     [menu addItemWithTitle:@"About"
                     action:@selector(orderFrontStandardAboutPanel:)
@@ -71,9 +71,6 @@
                     action:@selector(processExit:)
              keyEquivalent:@""];
     _statusItem.menu = menu;
-    
-    // Continuously check in ip
-    [self performSelectorInBackground:@selector(ipUpdater) withObject:nil];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -82,6 +79,11 @@
 
 - (void)processExit:(id)sender {
     [NSApp terminate: nil];
+}
+
+- (void)processRefresh:(id)sender {
+    _statusItem.title = @"Awaiting IP...";
+    [_connectionDelegate sendGetIPRequest];
 }
 
 @end

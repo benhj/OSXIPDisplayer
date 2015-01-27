@@ -19,11 +19,11 @@
 /// callback once IP has been retrieved
 - (void)updateIP;
 
-/// update the IP every 60 seconds
-- (void)ipUpdater;
-
 /// For exiting the app
 - (void)processExit:(id)sender;
+
+/// For rereshing the display of the IP
+- (void)processRefresh:(id)sender;
 
 @end
 
