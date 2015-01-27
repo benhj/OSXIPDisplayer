@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+//#import <Foundation/Foundation.h>
+//#import <CoreWLAN/CoreWLAN.h>
 
 @interface AppDelegate ()
 
@@ -34,11 +36,34 @@
 }
 
 
+-(void) handleInterfaceNotification:(NSNotification*) notification {
+    [self sendGetIPRequest];
+}
+
+
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
     // retrieve public ip
     _connectionDelegate = [[ConnectionDelegate alloc] init];
     [_connectionDelegate setCallbackObject:self];
     [_connectionDelegate sendGetIPRequest];
+    
+//    // From http://stackoverflow.com/questions/15047338/is-there-a-nsnotificationcenter-notification-for-wifi-network-changes
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(handleInterfaceNotification:)
+//                                                 name:CWModeDidChangeNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(handleInterfaceNotification:) name:CWSSIDDidChangeNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:)
+//                                                 name:CWBSSIDDidChangeNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(handleInterfaceNotification:)
+//                                                 name:CWCountryCodeDidChangeNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(handleInterfaceNotification:)
+//                                                 name:CWLinkDidChangeNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(handleInterfaceNotification:)
+//                                                 name:CWPowerDidChangeNotification object:nil];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -47,8 +72,8 @@
     _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     _statusItem.title = @"Awaiting IP...";
     _statusItem.toolTip = @"Public IP address of this computer";
-    _statusItem.image = [NSImage imageNamed:@"statusIcon"];
-    _statusItem.alternateImage = [NSImage imageNamed:@"statusIcon"];
+    _statusItem.image = [NSImage imageNamed:@""];
+    _statusItem.alternateImage = [NSImage imageNamed:@""];
     _statusItem.highlightMode = YES;
     
     // Menu stuff
@@ -81,9 +106,13 @@
     [NSApp terminate: nil];
 }
 
-- (void)processRefresh:(id)sender {
+- (void)sendGetIPRequest {
     _statusItem.title = @"Awaiting IP...";
     [_connectionDelegate sendGetIPRequest];
+}
+
+- (void)processRefresh:(id)sender {
+    [ self sendGetIPRequest];
 }
 
 @end
