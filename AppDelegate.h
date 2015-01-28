@@ -25,5 +25,8 @@
 /// For rereshing the display of the IP
 - (void)processRefresh:(id)sender;
 
+/// Brings an 'about' dialog to front
+- (void)frontAbout:(id)sender;
+
 @end
 
