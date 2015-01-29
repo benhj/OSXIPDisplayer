@@ -16,6 +16,8 @@
     
 }
 
+- (void)toAwait;
+
 /// callback once IP has been retrieved
 - (void)updateIP;
 
@@ -23,7 +25,7 @@
 - (void)processExit:(id)sender;
 
 /// For rereshing the display of the IP
-- (void)processRefresh:(id)sender;
+//- (void)processRefresh:(id)sender;
 
 /// Brings an 'about' dialog to front
 - (void)frontAbout:(id)sender;

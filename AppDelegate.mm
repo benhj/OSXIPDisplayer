@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-//#import <Foundation/Foundation.h>
-//#import <CoreWLAN/CoreWLAN.h>
+#import <SystemConfiguration/SystemConfiguration.h>
 
 @interface AppDelegate ()
 
@@ -40,30 +39,58 @@
     [self sendGetIPRequest];
 }
 
+- (void)setupReachability:(NSString*)address {
+    if(address) {
+        
+        SCNetworkReachabilityRef target;
+        SCNetworkConnectionFlags flags = 0;
+        target = SCNetworkReachabilityCreateWithName(CFAllocatorGetDefault(), [address UTF8String]);
+        
+        if(target) {
+
+            
+            SCNetworkReachabilityGetFlags(target, &flags);
+            SCNetworkReachabilityContext context = {0, NULL, NULL, NULL, NULL};
+            context.info = (void*)CFBridgingRetain(self);
+            
+            // callback triggered whenever reachability has changed
+            if (SCNetworkReachabilitySetCallback(target, callback, &context)) {
+                if (SCNetworkReachabilityScheduleWithRunLoop(target, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode) ) {
+                    NSLog(@"create and config reachability sucess") ;
+                }
+            }
+        } else if (target != NULL) {
+            CFRelease(target);
+        }
+    }
+}
+
+// called every time reachability changes
+void callback(SCNetworkReachabilityRef target,
+              SCNetworkConnectionFlags flags,
+              void *info)
+{
+    auto self = (AppDelegate*)CFBridgingRelease(info);
+    
+    // check that a connection isn't required. If a connection isn't required,
+    // we're probably connected;
+    Boolean ok = !(flags & kSCNetworkReachabilityFlagsConnectionRequired);
+    if(ok) {
+        // now check that given the connection, the address can be reached
+        ok = flags & kSCNetworkReachabilityFlagsReachable;
+    }
+
+    if(ok) {
+        [self sendGetIPRequest];
+    } else {
+        [self toAwait];
+    }
+}
+
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
-    // retrieve public ip
     _connectionDelegate = [[ConnectionDelegate alloc] init];
     [_connectionDelegate setCallbackObject:self];
-    [_connectionDelegate sendGetIPRequest];
-    
-//    // From http://stackoverflow.com/questions/15047338/is-there-a-nsnotificationcenter-notification-for-wifi-network-changes
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(handleInterfaceNotification:)
-//                                                 name:CWModeDidChangeNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(handleInterfaceNotification:) name:CWSSIDDidChangeNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:)
-//                                                 name:CWBSSIDDidChangeNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(handleInterfaceNotification:)
-//                                                 name:CWCountryCodeDidChangeNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(handleInterfaceNotification:)
-//                                                 name:CWLinkDidChangeNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(handleInterfaceNotification:)
-//                                                 name:CWPowerDidChangeNotification object:nil];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -80,10 +107,10 @@
     NSMenu *menu = [[NSMenu alloc] init];
     
     // For refreshing the IP
-    [menu addItemWithTitle:@"Refresh"
-                    action:@selector(processRefresh:)
-             keyEquivalent:@""];
-    [menu addItem:[NSMenuItem separatorItem]]; // A thin grey line
+//    [menu addItemWithTitle:@"Refresh"
+//                    action:@selector(processRefresh:)
+//             keyEquivalent:@""];
+//    [menu addItem:[NSMenuItem separatorItem]]; // A thin grey line
     
     // Add a simple 'about' item
     [menu addItemWithTitle:@"About"
@@ -96,6 +123,7 @@
                     action:@selector(processExit:)
              keyEquivalent:@""];
     _statusItem.menu = menu;
+    [self setupReachability:@"ifconfig.me"];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -107,19 +135,20 @@
 }
 
 - (void)frontAbout:(id)sender {
-    
     [NSApp activateIgnoringOtherApps:YES];
-    
     [NSApp orderFrontStandardAboutPanel:self];
 }
 
-- (void)sendGetIPRequest {
+- (void)toAwait {
     _statusItem.title = @"Awaiting IP...";
+}
+
+- (void)sendGetIPRequest {
     [_connectionDelegate sendGetIPRequest];
 }
 
-- (void)processRefresh:(id)sender {
-    [ self sendGetIPRequest];
-}
+//- (void)processRefresh:(id)sender {
+//    [ self sendGetIPRequest];
+//}
 
 @end
