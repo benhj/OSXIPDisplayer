@@ -145,6 +145,7 @@ void callback(SCNetworkReachabilityRef target,
 
 - (void)sendGetIPRequest {
     ConnectionDelegate* cd = [[ConnectionDelegate alloc] init];
+    [cd setCallbackObject:self];
     [cd sendGetIPRequest];
 }
 
