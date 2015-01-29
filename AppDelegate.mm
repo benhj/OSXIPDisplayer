@@ -23,9 +23,9 @@
     return (length > 0) && ([str characterAtIndex: length - 1] == c);
 }
 
-- (void)updateIP {
+- (void)updateIP:(NSString*)ip {
     
-    NSString* strippedIP = _connectionDelegate.getIPString;
+    NSString* strippedIP = ip;
     if ([self endsWithCharacter: L'\n'
                         forString: strippedIP]) {
         strippedIP = [strippedIP substringToIndex:[strippedIP length]-1];
@@ -89,8 +89,8 @@ void callback(SCNetworkReachabilityRef target,
 
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
-    _connectionDelegate = [[ConnectionDelegate alloc] init];
-    [_connectionDelegate setCallbackObject:self];
+//    _connectionDelegate = [[ConnectionDelegate alloc] init];
+//    [_connectionDelegate setCallbackObject:self];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -144,7 +144,8 @@ void callback(SCNetworkReachabilityRef target,
 }
 
 - (void)sendGetIPRequest {
-    [_connectionDelegate sendGetIPRequest];
+    ConnectionDelegate* cd = [[ConnectionDelegate alloc] init];
+    [cd sendGetIPRequest];
 }
 
 //- (void)processRefresh:(id)sender {

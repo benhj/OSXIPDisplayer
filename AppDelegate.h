@@ -12,14 +12,14 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     
     NSStatusItem* _statusItem;
-    ConnectionDelegate* _connectionDelegate;
+    //ConnectionDelegate* _connectionDelegate;
     
 }
 
 - (void)toAwait;
 
 /// callback once IP has been retrieved
-- (void)updateIP;
+- (void)updateIP:(NSString*)ip;
 
 /// For exiting the app
 - (void)processExit:(id)sender;

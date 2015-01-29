@@ -53,7 +53,7 @@
     _ipString = [[NSString alloc] initWithData:_receivedData
                                       encoding:NSASCIIStringEncoding];
     
-    [_callBackObject updateIP];
+    [_callBackObject updateIP:_ipString];
 }
 
 - (NSCachedURLResponse *)connection:(NSURLConnection *)connection
