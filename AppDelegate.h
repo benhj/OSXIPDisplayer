@@ -11,10 +11,13 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     
-    NSStatusItem* _statusItem;
+    //NSStatusItem* _statusItem;
     //ConnectionDelegate* _connectionDelegate;
     
 }
+
+@property (nonatomic, strong) NSStatusItem *_statusItem;
+@property (nonatomic, strong) ConnectionDelegate* _cd;
 
 - (void)toAwait;
 

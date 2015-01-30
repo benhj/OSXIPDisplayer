@@ -9,12 +9,12 @@
 #import "AppDelegate.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 
-@interface AppDelegate ()
-
-@property (weak) IBOutlet NSWindow *window;
-@end
 
 @implementation AppDelegate
+
+@synthesize _statusItem;
+@synthesize _cd;
+
 
 - (BOOL) endsWithCharacter: (unichar) c
                  forString: (NSString*)str
@@ -89,6 +89,8 @@ void callback(SCNetworkReachabilityRef target,
 
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
+    _cd = [[ConnectionDelegate alloc] init];
+    [_cd setCallbackObject:self];
 //    _connectionDelegate = [[ConnectionDelegate alloc] init];
 //    [_connectionDelegate setCallbackObject:self];
 }
@@ -144,9 +146,7 @@ void callback(SCNetworkReachabilityRef target,
 }
 
 - (void)sendGetIPRequest {
-    ConnectionDelegate* cd = [[ConnectionDelegate alloc] init];
-    [cd setCallbackObject:self];
-    [cd sendGetIPRequest];
+    [_cd sendGetIPRequest];
 }
 
 //- (void)processRefresh:(id)sender {
