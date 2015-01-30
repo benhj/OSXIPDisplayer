@@ -71,6 +71,7 @@ void callback(SCNetworkReachabilityRef target,
               void *info)
 {
     auto self = (AppDelegate*)CFBridgingRelease(info);
+    assert(self);
     
     // check that a connection isn't required. If a connection isn't required,
     // we're probably connected;
@@ -146,6 +147,10 @@ void callback(SCNetworkReachabilityRef target,
 }
 
 - (void)sendGetIPRequest {
+    if(!_cd) {
+        _cd = [[ConnectionDelegate alloc] init];
+        [_cd setCallbackObject:self];
+    }
     [_cd sendGetIPRequest];
 }
 
