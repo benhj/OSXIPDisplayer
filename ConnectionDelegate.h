@@ -10,14 +10,14 @@
 @class AppDelegate;
 
 @interface ConnectionDelegate : NSObject<NSURLConnectionDelegate> {
-    NSURLConnection *_theConnection;
-    NSMutableData* _receivedData;
     NSString* _ipString;
-    AppDelegate* _callBackObject;
 }
+
+@property (nonatomic, strong) NSURLConnection* _theConnection;
+@property (nonatomic, strong) AppDelegate* _callBackObject;
+@property (nonatomic, strong) NSMutableData* _receivedData;
 
 - (void) setCallbackObject:(AppDelegate*)callbackObject;
 - (void) sendGetIPRequest;
-- (NSString*) getIPString;
 
 @end

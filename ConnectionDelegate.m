@@ -11,6 +11,10 @@
 
 @implementation ConnectionDelegate
 
+@synthesize _callBackObject;
+@synthesize _theConnection;
+@synthesize _receivedData;
+
 - (void) setCallbackObject:(AppDelegate*)callbackObject {
     _callBackObject = callbackObject;
 }
@@ -23,9 +27,9 @@
     // create the connection with the request
     // and start loading the data
     // Create url connection and fire request
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    _theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 
-    if (!conn) {
+    if (!_theConnection) {
         // Release the receivedData object.
         _receivedData = nil;
         
@@ -71,10 +75,6 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     // The request has failed for some reason!
     // Check the error var
-}
-
-- (NSString*) getIPString {
-    return _ipString;
 }
 
 @end

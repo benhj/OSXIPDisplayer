@@ -16,6 +16,9 @@
 @synthesize _cd;
 
 
+// For ease of remembering self during reachability callback
+static AppDelegate* me;
+
 - (BOOL) endsWithCharacter: (unichar) c
                  forString: (NSString*)str
 {
@@ -51,7 +54,9 @@
             
             SCNetworkReachabilityGetFlags(target, &flags);
             SCNetworkReachabilityContext context = {0, NULL, NULL, NULL, NULL};
-            context.info = (void*)CFBridgingRetain(self);
+            
+            // Don't bother passing self in after all, just set use a static
+            //context.info = (void*)CFBridgingRetain(self);
             
             // callback triggered whenever reachability has changed
             if (SCNetworkReachabilitySetCallback(target, callback, &context)) {
@@ -68,10 +73,9 @@
 // called every time reachability changes
 void callback(SCNetworkReachabilityRef target,
               SCNetworkConnectionFlags flags,
-              void *info)
+              void *info) // info no longer used
 {
-    auto self = (AppDelegate*)CFBridgingRelease(info);
-    assert(self);
+    assert(me);
     
     // check that a connection isn't required. If a connection isn't required,
     // we're probably connected;
@@ -82,18 +86,19 @@ void callback(SCNetworkReachabilityRef target,
     }
 
     if(ok) {
-        [self sendGetIPRequest];
+        [me sendGetIPRequest];
     } else {
-        [self toAwait];
+        [me toAwait];
     }
 }
 
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
+    
+    // for ease of reachability callback stuff, store self in static 'me'
+    me = self;
     _cd = [[ConnectionDelegate alloc] init];
     [_cd setCallbackObject:self];
-//    _connectionDelegate = [[ConnectionDelegate alloc] init];
-//    [_connectionDelegate setCallbackObject:self];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -108,12 +113,6 @@ void callback(SCNetworkReachabilityRef target,
     
     // Menu stuff
     NSMenu *menu = [[NSMenu alloc] init];
-    
-    // For refreshing the IP
-//    [menu addItemWithTitle:@"Refresh"
-//                    action:@selector(processRefresh:)
-//             keyEquivalent:@""];
-//    [menu addItem:[NSMenuItem separatorItem]]; // A thin grey line
     
     // Add a simple 'about' item
     [menu addItemWithTitle:@"About"
@@ -153,9 +152,5 @@ void callback(SCNetworkReachabilityRef target,
     }
     [_cd sendGetIPRequest];
 }
-
-//- (void)processRefresh:(id)sender {
-//    [ self sendGetIPRequest];
-//}
 
 @end
