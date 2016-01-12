@@ -3,7 +3,7 @@
 //  OSXIPDisplayer
 //
 //  Created by Ben Jones on 1/27/15.
-//  Copyright (c) 2015 Ben Jones. All rights reserved.
+//  Copyright (c) 2015-2016 Ben Jones. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -44,24 +44,19 @@ static AppDelegate* me;
 
 - (void)setupReachability:(NSString*)address {
     if(address) {
-        
         SCNetworkReachabilityRef target;
         SCNetworkConnectionFlags flags = 0;
         target = SCNetworkReachabilityCreateWithName(CFAllocatorGetDefault(), [address UTF8String]);
         
         if(target) {
 
-            
             SCNetworkReachabilityGetFlags(target, &flags);
             SCNetworkReachabilityContext context = {0, NULL, NULL, NULL, NULL};
-            
-            // Don't bother passing self in after all, just set use a static
-            //context.info = (void*)CFBridgingRetain(self);
             
             // callback triggered whenever reachability has changed
             if (SCNetworkReachabilitySetCallback(target, callback, &context)) {
                 if (SCNetworkReachabilityScheduleWithRunLoop(target, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode) ) {
-                    NSLog(@"create and config reachability sucess") ;
+                    NSLog(@"create and config reachability success") ;
                 }
             }
         } else if (target != NULL) {
@@ -125,6 +120,7 @@ void callback(SCNetworkReachabilityRef target,
                     action:@selector(processExit:)
              keyEquivalent:@""];
     _statusItem.menu = menu;
+        
     [self setupReachability:@"ifconfig.me"];
 }
 

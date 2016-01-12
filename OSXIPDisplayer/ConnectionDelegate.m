@@ -23,7 +23,6 @@
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ifconfig.me/ip"]];
     
-    
     // create the connection with the request
     // and start loading the data
     // Create url connection and fire request

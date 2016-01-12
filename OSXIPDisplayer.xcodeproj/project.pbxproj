@@ -1,0 +1,523 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA1CDB781C4545240021732E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1CDB771C4545240021732E /* main.m */; };
+		FA1CDB7A1C4545240021732E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1CDB791C4545240021732E /* Assets.xcassets */; };
+		FA1CDB881C4545240021732E /* OSXIPDisplayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1CDB871C4545240021732E /* OSXIPDisplayerTests.m */; };
+		FA1CDB931C4545240021732E /* OSXIPDisplayerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1CDB921C4545240021732E /* OSXIPDisplayerUITests.m */; };
+		FA1CDBA11C4546100021732E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA1CDBA01C4546100021732E /* AppDelegate.mm */; };
+		FA1CDBA31C4546600021732E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1CDBA21C4546600021732E /* Cocoa.framework */; };
+		FA1CDBA51C4546700021732E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1CDBA41C4546700021732E /* SystemConfiguration.framework */; };
+		FA1CDBA81C45468C0021732E /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1CDBA71C45468C0021732E /* ConnectionDelegate.m */; };
+		FA1CDBAD1C4547D80021732E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1CDBAB1C4547D80021732E /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA1CDB841C4545240021732E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA1CDB681C4545240021732E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA1CDB6F1C4545240021732E;
+			remoteInfo = OSXIPDisplayer;
+		};
+		FA1CDB8F1C4545240021732E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA1CDB681C4545240021732E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA1CDB6F1C4545240021732E;
+			remoteInfo = OSXIPDisplayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA1CDB701C4545240021732E /* OSXIPDisplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSXIPDisplayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1CDB731C4545240021732E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FA1CDB771C4545240021732E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA1CDB791C4545240021732E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA1CDB7E1C4545240021732E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA1CDB831C4545240021732E /* OSXIPDisplayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXIPDisplayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1CDB871C4545240021732E /* OSXIPDisplayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSXIPDisplayerTests.m; sourceTree = "<group>"; };
+		FA1CDB891C4545240021732E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA1CDB8E1C4545240021732E /* OSXIPDisplayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXIPDisplayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1CDB921C4545240021732E /* OSXIPDisplayerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSXIPDisplayerUITests.m; sourceTree = "<group>"; };
+		FA1CDB941C4545240021732E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA1CDBA01C4546100021732E /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		FA1CDBA21C4546600021732E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		FA1CDBA41C4546700021732E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FA1CDBA61C45468C0021732E /* ConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionDelegate.h; sourceTree = "<group>"; };
+		FA1CDBA71C45468C0021732E /* ConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionDelegate.m; sourceTree = "<group>"; };
+		FA1CDBAC1C4547D80021732E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA1CDB6D1C4545240021732E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1CDBA51C4546700021732E /* SystemConfiguration.framework in Frameworks */,
+				FA1CDBA31C4546600021732E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA1CDB801C4545240021732E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA1CDB8B1C4545240021732E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA1CDB671C4545240021732E = {
+			isa = PBXGroup;
+			children = (
+				FA1CDBA41C4546700021732E /* SystemConfiguration.framework */,
+				FA1CDBA21C4546600021732E /* Cocoa.framework */,
+				FA1CDB721C4545240021732E /* OSXIPDisplayer */,
+				FA1CDB861C4545240021732E /* OSXIPDisplayerTests */,
+				FA1CDB911C4545240021732E /* OSXIPDisplayerUITests */,
+				FA1CDB711C4545240021732E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA1CDB711C4545240021732E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA1CDB701C4545240021732E /* OSXIPDisplayer.app */,
+				FA1CDB831C4545240021732E /* OSXIPDisplayerTests.xctest */,
+				FA1CDB8E1C4545240021732E /* OSXIPDisplayerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA1CDB721C4545240021732E /* OSXIPDisplayer */ = {
+			isa = PBXGroup;
+			children = (
+				FA1CDBAB1C4547D80021732E /* MainMenu.xib */,
+				FA1CDBA61C45468C0021732E /* ConnectionDelegate.h */,
+				FA1CDBA71C45468C0021732E /* ConnectionDelegate.m */,
+				FA1CDBA01C4546100021732E /* AppDelegate.mm */,
+				FA1CDB731C4545240021732E /* AppDelegate.h */,
+				FA1CDB791C4545240021732E /* Assets.xcassets */,
+				FA1CDB7E1C4545240021732E /* Info.plist */,
+				FA1CDB761C4545240021732E /* Supporting Files */,
+			);
+			path = OSXIPDisplayer;
+			sourceTree = "<group>";
+		};
+		FA1CDB761C4545240021732E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA1CDB771C4545240021732E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA1CDB861C4545240021732E /* OSXIPDisplayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA1CDB871C4545240021732E /* OSXIPDisplayerTests.m */,
+				FA1CDB891C4545240021732E /* Info.plist */,
+			);
+			path = OSXIPDisplayerTests;
+			sourceTree = "<group>";
+		};
+		FA1CDB911C4545240021732E /* OSXIPDisplayerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FA1CDB921C4545240021732E /* OSXIPDisplayerUITests.m */,
+				FA1CDB941C4545240021732E /* Info.plist */,
+			);
+			path = OSXIPDisplayerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA1CDB6F1C4545240021732E /* OSXIPDisplayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA1CDB971C4545240021732E /* Build configuration list for PBXNativeTarget "OSXIPDisplayer" */;
+			buildPhases = (
+				FA1CDB6C1C4545240021732E /* Sources */,
+				FA1CDB6D1C4545240021732E /* Frameworks */,
+				FA1CDB6E1C4545240021732E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OSXIPDisplayer;
+			productName = OSXIPDisplayer;
+			productReference = FA1CDB701C4545240021732E /* OSXIPDisplayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA1CDB821C4545240021732E /* OSXIPDisplayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA1CDB9A1C4545240021732E /* Build configuration list for PBXNativeTarget "OSXIPDisplayerTests" */;
+			buildPhases = (
+				FA1CDB7F1C4545240021732E /* Sources */,
+				FA1CDB801C4545240021732E /* Frameworks */,
+				FA1CDB811C4545240021732E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA1CDB851C4545240021732E /* PBXTargetDependency */,
+			);
+			name = OSXIPDisplayerTests;
+			productName = OSXIPDisplayerTests;
+			productReference = FA1CDB831C4545240021732E /* OSXIPDisplayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA1CDB8D1C4545240021732E /* OSXIPDisplayerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA1CDB9D1C4545240021732E /* Build configuration list for PBXNativeTarget "OSXIPDisplayerUITests" */;
+			buildPhases = (
+				FA1CDB8A1C4545240021732E /* Sources */,
+				FA1CDB8B1C4545240021732E /* Frameworks */,
+				FA1CDB8C1C4545240021732E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA1CDB901C4545240021732E /* PBXTargetDependency */,
+			);
+			name = OSXIPDisplayerUITests;
+			productName = OSXIPDisplayerUITests;
+			productReference = FA1CDB8E1C4545240021732E /* OSXIPDisplayerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA1CDB681C4545240021732E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Ben Jones";
+				TargetAttributes = {
+					FA1CDB6F1C4545240021732E = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					FA1CDB821C4545240021732E = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = FA1CDB6F1C4545240021732E;
+					};
+					FA1CDB8D1C4545240021732E = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = FA1CDB6F1C4545240021732E;
+					};
+				};
+			};
+			buildConfigurationList = FA1CDB6B1C4545240021732E /* Build configuration list for PBXProject "OSXIPDisplayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA1CDB671C4545240021732E;
+			productRefGroup = FA1CDB711C4545240021732E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA1CDB6F1C4545240021732E /* OSXIPDisplayer */,
+				FA1CDB821C4545240021732E /* OSXIPDisplayerTests */,
+				FA1CDB8D1C4545240021732E /* OSXIPDisplayerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA1CDB6E1C4545240021732E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1CDB7A1C4545240021732E /* Assets.xcassets in Resources */,
+				FA1CDBAD1C4547D80021732E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA1CDB811C4545240021732E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA1CDB8C1C4545240021732E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA1CDB6C1C4545240021732E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1CDBA11C4546100021732E /* AppDelegate.mm in Sources */,
+				FA1CDBA81C45468C0021732E /* ConnectionDelegate.m in Sources */,
+				FA1CDB781C4545240021732E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA1CDB7F1C4545240021732E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1CDB881C4545240021732E /* OSXIPDisplayerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA1CDB8A1C4545240021732E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1CDB931C4545240021732E /* OSXIPDisplayerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA1CDB851C4545240021732E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA1CDB6F1C4545240021732E /* OSXIPDisplayer */;
+			targetProxy = FA1CDB841C4545240021732E /* PBXContainerItemProxy */;
+		};
+		FA1CDB901C4545240021732E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA1CDB6F1C4545240021732E /* OSXIPDisplayer */;
+			targetProxy = FA1CDB8F1C4545240021732E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA1CDBAB1C4547D80021732E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA1CDBAC1C4547D80021732E /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA1CDB951C4545240021732E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FA1CDB961C4545240021732E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FA1CDB981C4545240021732E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OSXIPDisplayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = benhj.OSXIPDisplayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FA1CDB991C4545240021732E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OSXIPDisplayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = benhj.OSXIPDisplayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FA1CDB9B1C4545240021732E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OSXIPDisplayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = benhj.OSXIPDisplayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OSXIPDisplayer.app/Contents/MacOS/OSXIPDisplayer";
+			};
+			name = Debug;
+		};
+		FA1CDB9C1C4545240021732E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OSXIPDisplayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = benhj.OSXIPDisplayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OSXIPDisplayer.app/Contents/MacOS/OSXIPDisplayer";
+			};
+			name = Release;
+		};
+		FA1CDB9E1C4545240021732E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OSXIPDisplayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = benhj.OSXIPDisplayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OSXIPDisplayer;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		FA1CDB9F1C4545240021732E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OSXIPDisplayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = benhj.OSXIPDisplayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OSXIPDisplayer;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA1CDB6B1C4545240021732E /* Build configuration list for PBXProject "OSXIPDisplayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA1CDB951C4545240021732E /* Debug */,
+				FA1CDB961C4545240021732E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA1CDB971C4545240021732E /* Build configuration list for PBXNativeTarget "OSXIPDisplayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA1CDB981C4545240021732E /* Debug */,
+				FA1CDB991C4545240021732E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA1CDB9A1C4545240021732E /* Build configuration list for PBXNativeTarget "OSXIPDisplayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA1CDB9B1C4545240021732E /* Debug */,
+				FA1CDB9C1C4545240021732E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA1CDB9D1C4545240021732E /* Build configuration list for PBXNativeTarget "OSXIPDisplayerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA1CDB9E1C4545240021732E /* Debug */,
+				FA1CDB9F1C4545240021732E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA1CDB681C4545240021732E /* Project object */;
+}
